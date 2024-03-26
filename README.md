@@ -1,8 +1,11 @@
+# "Créer un Repository Red Hat Local : Guide Pratique pour les Administrateurs Systèmes Linux"
+
 Dans un scénario où un serveur Red Hat est hors ligne, laissant les utilisateurs et les machines clientes sans accès aux dépôts nécessaires, une solution pratique consiste à mettre en place un dépôt HTTP Red Hat local. Cela permet aux administrateurs système Linux de maintenir les opérations même dans des environnements isolés.
 
 Dans cet article, nous explorerons étape par étape la procédure pour configurer un serveur de dépôt local HTTP Red Hat à partir d'une image ISO installée sur un serveur. Cette compétence essentielle contribuera à assurer la continuité des opérations.
 
-A. Configuration du serveur
+
+## A. Configuration du serveur
 
 Étape I: Configuration du serveur de dépôt local
 
@@ -57,6 +60,10 @@ b- Vérification de l'état
 
 ![8](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/bf11b47c-acd6-44f6-bc88-d139cc0f058c)
 
+c- Paramétrage du firewall
+
+![22](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e794c7ff-52c9-47b5-bb99-435bfdc19f0d)
+
 
 Étape V
 
@@ -80,6 +87,50 @@ b- Création du dossier "/var/www/html/rhl9-repo/rhl9-repo/" & copie du contenu 
 
 c- Comparaison du contenu des dossiers "/mnt/rhl9-repo/" et "/var/wwww/html/rhl9-repo/"
 
-Image 14-a
+![14 -a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e2ffe139-05cd-4dc4-a488-064af8f445f8)
 
-B. Configuration du client
+
+
+## B. Configuration du client
+
+
+Étape I: Configuration de la machine cliente
+
+Pour permettre à la machine cliente d'accéder au dépôt local, nous devons effectuer les étapes suivantes :
+
+![15](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/045b1169-2209-497f-9e96-296c607a005f)
+
+![16](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/5fb84d68-7cdf-4ec8-8d8e-5126bc607f2d)
+
+![17](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/af051c94-5ac9-4dab-ae9f-7754e5aac84d)
+
+![18](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/01dc445d-2649-4d90-bd56-433b0931db30)
+
+
+Étape II
+
+a- Créer un fichier de configuration pour le dépôt local dans le répertoire "/etc/yum.repos.d/local.repo"
+
+![19-a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/ef16fb6b-9cbd-4c1c-a9b1-517758921bb6)
+
+
+![19-b](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/b4084ee9-0d0a-418a-9981-b890596c944a)
+
+
+b- Exécuter les commandes suivantes : "dnf clean all" ; "dnf repolist" ; "subscription-manager clean"
+
+![20](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/78430768-c69d-4d2f-9e5b-3baa6e84fe1f)
+
+
+c- Tester la fonctionnalité du dépôt
+
+![21](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/ac431497-0710-44e5-8ace-fcbef99f1a51)
+
+
+Conclusion:
+
+La mise en place d'un dépôt local HTTP Red Hat offre une solution robuste pour les environnements hors ligne, garantissant aux utilisateurs et aux machines clientes un accès aux paquets nécessaires même en l'absence de connexion Internet. En suivant attentivement les étapes de configuration sur le serveur et sur la machine cliente, les administrateurs système peuvent maintenir la continuité des opérations dans des environnements isolés, assurant ainsi la stabilité et la fiabilité du système.
+
+
+
+
