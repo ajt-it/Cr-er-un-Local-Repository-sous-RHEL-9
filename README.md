@@ -31,7 +31,7 @@ c- Rendre le montage permanent
 
 a- Création du fichier de configuration du dépôt local dans "/etc/yum.repos.d/rhl9.repo"
 
-Attribution de la permission 644 au fichier "rhl9.repo"
+N.B. Au besoin, attribuer la permission 644 au fichier "rhl9.repo"
 
 Configuration comme suit :
 
