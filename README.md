@@ -80,7 +80,7 @@ a- Installation des packages requis pour créer, configurer et gérer le dépôt
 ![14](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e4252e02-8b48-4e4c-a5c2-d81146b7e888)
 
 
-b- Création du dossier "/var/www/html/rhl9-repo/rhl9-repo/" & copie du contenu du dossier "/mnt/rhl9-repo/" dans "/var/wwww/html/rhl9-repo/"
+b- Création du dossier "/var/www/html/rhl9-repo/rhl9-repo/" & copie du contenu du dossier "/mnt/rhl9-repo/" dans "/var/www/html/rhl9-repo/"
 
 ![13](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/07452fa1-2e10-46ea-89d3-e85ecbe566e3)
 
