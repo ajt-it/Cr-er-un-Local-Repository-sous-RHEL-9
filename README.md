@@ -52,6 +52,7 @@ c- Test de la fonctionnalité du dépôt et installation du serveur "http"
 Étape IV
 
 a- Une fois le serveur HTTP installé, démarrer et activer le démarrage automatique du service au démarrage.
+
 b- Vérification de l'état
 
 ![8](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/bf11b47c-acd6-44f6-bc88-d139cc0f058c)
