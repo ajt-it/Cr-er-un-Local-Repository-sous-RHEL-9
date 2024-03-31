@@ -1,4 +1,4 @@
-# "Creating a Red Hat Local Repository: Practical Guide for Linux System Administrators"
+# "Creating a Red Hat ⛑ Local Repository: Practical Guide for Linux System Administrators"
 
 In scenarios where a Red Hat server is offline, leaving users and client machines without access to necessary repositories, a practical solution is to establish a local Red Hat HTTP repository. This allows Linux system administrators to maintain operations even in isolated environments.
 
