@@ -1,73 +1,73 @@
-# "Créer un Repository Red Hat Local : Guide Pratique pour les Administrateurs Systèmes Linux"
+# "Creating a Red Hat Local Repository: Practical Guide for Linux System Administrators"
 
-Dans un scénario où un serveur Red Hat est hors ligne, laissant les utilisateurs et les machines clientes sans accès aux dépôts nécessaires, une solution pratique consiste à mettre en place un dépôt HTTP Red Hat local. Cela permet aux administrateurs système Linux de maintenir les opérations même dans des environnements isolés.
+In scenarios where a Red Hat server is offline, leaving users and client machines without access to necessary repositories, a practical solution is to establish a local Red Hat HTTP repository. This allows Linux system administrators to maintain operations even in isolated environments.
 
-Dans cet article, nous explorerons étape par étape la procédure pour configurer un serveur de dépôt local HTTP Red Hat à partir d'une image ISO installée sur un serveur. Cette compétence essentielle contribuera à assurer la continuité des opérations.
+In this article, we will explore step-by-step procedures to set up a Red Hat local HTTP repository server from an installed ISO image on a server. This essential skill will contribute to ensuring operational continuity.
 
 
-## A. Configuration du serveur
+## A. Server Configuration
 
-Étape I: Configuration du serveur de dépôt local
+Step I: Setting up the Local Repository Server
 
 ![1](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/0ceae4f6-3aac-4ac3-902b-604a09af9131)
 
 ![2 - a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/8d96ebf6-2466-4e7c-aa19-8de6be4178f3)
 
 
-Étape II
+Step II
 
-a- Création du dossier "rhl9-repo" dans "/mnt" sur le serveur
+a- Creating the "rhl9-repo" folder in "/mnt" on the server
 
-b- Montage de l'ISO
+b- Mounting the ISO
 
-c- Rendre le montage permanent
+c- Making the mount permanent
 
 ![3 -a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/8112a858-ff93-47dd-be2f-0559005ddf8b)
 
 ![4 - a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/cea8f569-8f9d-45fc-b745-0c1f508ef5e6)
 
 
-Étape III
+Step III
 
-a- Création du fichier de configuration du dépôt local dans "/etc/yum.repos.d/rhl9.repo"
+a- Creating the local repository configuration file in "/etc/yum.repos.d/rhl9.repo"
 
-N.B. Au besoin, attribuer la permission 644 au fichier "rhl9.repo"
+Note: If necessary, assign permission 644 to the "rhl9.repo" file
 
-Configuration comme suit :
+Configuration as follows:
 
 ![4 - b](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/a3d24c0d-58f5-4d94-a499-c55236c6d8a9)
 
 ![4 - c](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/72225561-e613-4f56-bcbe-8e42f9deb897)
 
 
-b- Exécution des commandes suivantes : "dnf clean all" ; "dnf repolist" ; "subscription-manager clean"
+b- Executing the following commands: "dnf clean all"; "dnf repolist"; "subscription-manager clean"
 
 ![5](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/1145cab8-7fc9-4291-9dea-1f57c864df2e)
 
 
-c- Test de la fonctionnalité du dépôt et installation du serveur "http"
+c- Testing repository functionality and installing the HTTP server
 
 ![6](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e219f0cc-7e88-4cbe-b8ad-1198e009d0a6)
 
 ![7](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/6b104d62-67dd-4349-9ae7-b737b23683d5)
 
 
-Étape IV
+Step IV
 
-a- Une fois le serveur HTTP installé, démarrer et activer le démarrage automatique du service au démarrage.
+a- Once the HTTP server is installed, start and enable automatic service startup at boot.
 
-b- Vérification de l'état
+b- Check HTTP server status
 
 ![8](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/bf11b47c-acd6-44f6-bc88-d139cc0f058c)
 
-c- Paramétrage du firewall
+c- Firewall configuration
 
 ![22](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e794c7ff-52c9-47b5-bb99-435bfdc19f0d)
 
 
-Étape V
+Step V
 
-a- Installation des packages requis pour créer, configurer et gérer le dépôt local
+a- Installation of required packages to create, configure, and manage the local repository
 
 ![9](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/02891e7c-d2fb-4ecd-a38f-a71b8e0474f8)
 
@@ -80,12 +80,12 @@ a- Installation des packages requis pour créer, configurer et gérer le dépôt
 ![14](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e4252e02-8b48-4e4c-a5c2-d81146b7e888)
 
 
-b- Création du dossier "/var/www/html/rhl9-repo/rhl9-repo/" & copie du contenu du dossier "/mnt/rhl9-repo/" dans "/var/www/html/rhl9-repo/"
+b- Creating the folder "/var/www/html/rhl9-repo/rhl9-repo/" & copying content from "/mnt/rhl9-repo/" to "/var/www/html/rhl9-repo/"
 
 ![13](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/07452fa1-2e10-46ea-89d3-e85ecbe566e3)
 
 
-c- Comparaison du contenu des dossiers "/mnt/rhl9-repo/" et "/var/wwww/html/rhl9-repo/"
+c- Comparison of content between "/mnt/rhl9-repo/" and "/var/www/html/rhl9-repo/"
 
 ![14 -a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e2ffe139-05cd-4dc4-a488-064af8f445f8)
 
@@ -94,9 +94,9 @@ c- Comparaison du contenu des dossiers "/mnt/rhl9-repo/" et "/var/wwww/html/rhl9
 ## B. Configuration du client
 
 
-Étape I: Configuration de la machine cliente
+ÉB. Client Configuration
 
-Pour permettre à la machine cliente d'accéder au dépôt local, nous devons effectuer les étapes suivantes :
+Step I: Client Machine Configuration
 
 ![15](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/045b1169-2209-497f-9e96-296c607a005f)
 
@@ -107,9 +107,9 @@ Pour permettre à la machine cliente d'accéder au dépôt local, nous devons ef
 ![18](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/01dc445d-2649-4d90-bd56-433b0931db30)
 
 
-Étape II
+Step II
 
-a- Créer un fichier de configuration pour le dépôt local dans le répertoire "/etc/yum.repos.d/local.repo"
+a- Create a configuration file for the local repository in the directory "/etc/yum.repos.d/local.repo"
 
 ![19-a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/ef16fb6b-9cbd-4c1c-a9b1-517758921bb6)
 
@@ -117,19 +117,19 @@ a- Créer un fichier de configuration pour le dépôt local dans le répertoire 
 ![19-b](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/b4084ee9-0d0a-418a-9981-b890596c944a)
 
 
-b- Exécuter les commandes suivantes : "dnf clean all" ; "dnf repolist" ; "subscription-manager clean"
+b- Execute the following commands: "dnf clean all"; "dnf repolist"; "subscription-manager clean"
 
 ![20](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/78430768-c69d-4d2f-9e5b-3baa6e84fe1f)
 
 
-c- Tester la fonctionnalité du dépôt
+c- Test repository functionality
 
 ![21](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/ac431497-0710-44e5-8ace-fcbef99f1a51)
 
 
 Conclusion:
 
-La mise en place d'un dépôt local HTTP Red Hat offre une solution robuste pour les environnements hors ligne, garantissant aux utilisateurs et aux machines clientes un accès aux paquets nécessaires même en l'absence de connexion Internet. En suivant attentivement les étapes de configuration sur le serveur et sur la machine cliente, les administrateurs système peuvent maintenir la continuité des opérations dans des environnements isolés, assurant ainsi la stabilité et la fiabilité du système.
+Setting up a Red Hat local HTTP repository provides a robust solution for offline environments, ensuring users and client machines access to necessary packages even in the absence of an internet connection. By carefully following configuration steps on the server and client machine, system administrators can maintain operational continuity in isolated environments, ensuring system stability and reliability.
 
 
 
