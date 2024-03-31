@@ -90,13 +90,11 @@ c- Comparison of content between "/mnt/rhl9-repo/" and "/var/www/html/rhl9-repo/
 ![14 -a](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/e2ffe139-05cd-4dc4-a488-064af8f445f8)
 
 
+![image](https://github.com/ajt-it/Creating-a-Local-Repository-Server-on-RHEL-9/assets/46109209/8fb5da60-64fc-4bc8-810e-e41290b1355a)
 
-## B. Configuration du client
 
 
-ÉB. Client Configuration
-
-Step I: Client Machine Configuration
+## B. Client Configuration
 
 ![15](https://github.com/ajt-it/Creer-un-Local-Repository-Server-sous-RHEL-9/assets/46109209/045b1169-2209-497f-9e96-296c607a005f)
 
